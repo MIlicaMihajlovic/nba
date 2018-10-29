@@ -13,4 +13,11 @@ class PlayersController extends Controller
 
         return view('player.index', ['players' => $players]);
     }
+
+    public function show($id)
+    {
+        $player = Player::findOrFail($id);
+
+        return view('player.show', ['player' => $player]);
+    }
 }
