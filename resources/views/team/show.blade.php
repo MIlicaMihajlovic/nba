@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    
-    <title>NBA</title>
-    
-</head>
-<body>
+@extends('layouts.master')
+
+@section('title') 
+   NBA
+@endsection
+
+
+@section('content') 
     <h1>Team</h1>
 
      <h2>{{ $team->name }}</h2>
@@ -31,8 +30,4 @@
     
   </ul>  
        
-   
-        <!-- tom timu (ime, email, adresa, grad) i lista igrača tog tima   -->
-   
-</body>
-</html>
+@endsection

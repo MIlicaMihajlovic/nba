@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
+@extends('layouts.master')
     
-    <title>NBA</title>
-    
-</head>
-<body>
+@section('title') 
+   NBA
+@endsection       
+
+@section('content')
     <h1>List of players</h1>
 
   <ul>
@@ -20,5 +18,4 @@
     @endforeach
     
   </ul>  
-</body>
-</html>
+@endsection

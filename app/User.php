@@ -15,7 +15,15 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'name', 'email', 'password'];
+
+
+    const VALIDATION_RULES = [
+        'name' => 'required', 
+        'email' => 'required | email', 
+        'password' => 'required | confirmed:password_confirmation | min:6'
+    ];    
 
     /**
      * The attributes that should be hidden for arrays.
