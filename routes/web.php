@@ -15,7 +15,7 @@ Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
 
 Route::get('/login', 'LoginController@index');
-Route::post('/login', 'TeamsController@index' );
+Route::post('/login', 'LoginController@login' );
 
 Route::get('/logout', 'LoginController@logout');
 
