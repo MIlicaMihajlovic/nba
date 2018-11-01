@@ -5,13 +5,13 @@
       
 
       <!-- proverava da li je korisnik ulogovan -->
-      <!-- @if(auth()->check()) 
-          Hello, {{ auth()->user()->name }} -->
+      @if(auth()->check()) 
+          Hello, {{ auth()->user()->name }}
           <a href="/logout">Logout</a>     
-      <!-- @else -->
+      @else
           <a href="/login">Login</a>
           <a class="btn btn-sm btn-outline-secondary" href="/register">Sign up</a>
-      <!-- @endif -->
+      @endif
 <!-- u zavisnosti da li je ulogovan pokazivace log in ili log out -->
 
     </div>

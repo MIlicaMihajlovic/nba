@@ -12,7 +12,12 @@
 */
 
 Route::get('/register', 'RegisterController@create');
-//Route::post('/register', 'RegisterController@store');
+Route::post('/register', 'RegisterController@store');
+
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'TeamsController@index' );
+
+Route::get('/logout', 'LoginController@logout');
 
 
 Route::get('/', 'TeamsController@index');

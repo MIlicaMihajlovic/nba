@@ -1,22 +1,16 @@
 @extends('layouts.master')
 
 @section('title') 
-    Register User
+    Login User
 @endsection
 
 
 @section('content') 
-    <h1>Register User</h1>
+    <h1>Login User</h1>
 
-    <form method="POST" action="/register">
+    <form method="POST" action="/login">
 
     {{ csrf_field() }}
-
-    <div class="form-group">
-        <label>Name</label>
-        <input name="name" type="text" class="form-control" placeholder="Enter name">
-         @include('layouts.partials.error-message', ['field' => 'name']) 
-    </div>
 
     <div class="form-group">
         <label>Email</label>
@@ -30,14 +24,7 @@
         @include('layouts.partials.error-message', ['field' => 'password']) 
     </div>
 
-    <div class="form-group">
-        <label>Password confirmation</label>
-        <input name="password_confirmation" type="password" class="form-control" placeholder="Confirm password">
-        @include('layouts.partials.error-message', ['field' => 'password_confirmation']) 
-    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection
-    
-
