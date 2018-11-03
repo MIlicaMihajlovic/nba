@@ -31,6 +31,10 @@ class RegisterController extends Controller
     $user->password = bcrypt(request('password'));
     $user->save();
 
+    auth()->login($user);
+
+    session()->flash('message', 'Hvala sto ste se registrovali!');
+
     return redirect('/');
   }
 }

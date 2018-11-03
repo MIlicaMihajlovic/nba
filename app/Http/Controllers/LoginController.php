@@ -24,6 +24,8 @@ class LoginController extends Controller
             session()->flash('message', 'Pogresio si sifru!');
             return back(); //vrati ovu poruku
         }
+        
+
 
         return redirect('/'); //u suprotnom uloguj usera i redirektuj na stranicu gde su svi timovi
     }

@@ -11,16 +11,18 @@
 |
 */
 
+Route::get('/', 'TeamsController@index')->name('teams.index');
+
 Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@login' );
 
 Route::get('/logout', 'LoginController@logout');
 
 
-Route::get('/', 'TeamsController@index');
+
 Route::get('/teams/{id}', 'TeamsController@show')->name('teams.show');
 
 

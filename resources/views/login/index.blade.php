@@ -27,4 +27,12 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    @if (count($errors->all()))
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger">
+                {{ $error }} <!--Ispisali smo poruku ako nismo dobro uneli sifru i email-->
+            </div>
+        @endforeach
+    @endif
 @endsection
