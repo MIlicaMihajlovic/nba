@@ -10,7 +10,7 @@ class RegisterController extends Controller
 
   public function __construct()
   {
-    $this->middleware('guest');
+    $this->middleware('guest');  //samo gosti vide ovu stranicu da se registruju
   }
 
   public function create()

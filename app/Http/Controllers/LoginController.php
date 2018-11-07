@@ -8,7 +8,8 @@ class LoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']); //samo gosti vide ovu stranicu
+          //ali gost ne vidi logout, a logout nam je metoda u ovom istom kontroleru
     }
 
     public function index()

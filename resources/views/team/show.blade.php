@@ -29,5 +29,37 @@
     @endforeach
     
   </ul>  
+{{-- ako nema komentara da ne ispisuje --}}
+  @if(count($team->comments)) 
+    <h4>Comments:</h4>
+
+        <ul class="list-unstyled">
+            @foreach($team->comments as $comment)
+
+                <li>
+                    <p><strong>Author:</strong> {{ $comment->user->name}}</p>
+                    <p>{{ $comment->content }}</p>
+                  
+                </li>
+
+            @endforeach
+            
+        </ul>
+  @endif
+
+  <form method="POST" action="/teams/{{$team->id}}/comments">
+    {{ csrf_field() }}
+
+    <div class="form-group">
+      <label>Text</label>
+      <textarea name="content" type="text" class="form-control" placeholder="Enter text"></textarea>
+      @include('layouts.partials.error-message', ['field' => 'content']) 
+      </div>
+
+      <!-- bitan nam je name -->
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
        
 @endsection

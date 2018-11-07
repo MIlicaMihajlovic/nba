@@ -10,7 +10,8 @@ class TeamsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth'); //ne dopusta nam da vidimo stranicu ako nismo user
+                                    //dopusta samo userima da vide stranicu
     }
 
     public function index()

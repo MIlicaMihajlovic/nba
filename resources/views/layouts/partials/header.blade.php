@@ -6,7 +6,8 @@
 
       <!-- proverava da li je korisnik ulogovan -->
       @if(auth()->check()) 
-          Hello, {{ auth()->user()->name }}
+      {{-- a ovde kazemo hello onom koji je ulogovan --}}
+          Hello, {{ auth()->user()->name }}  
           <a href="/logout">Logout</a>     
       @else
           <a href="/login">Login</a>
