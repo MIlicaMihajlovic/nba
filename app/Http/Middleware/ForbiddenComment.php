@@ -21,6 +21,7 @@ class ForbiddenComment
         foreach($badwords as $word){
             if(preg_match("/\b$word\b/i",$request)){
                 return response(view('comment.forbidden-comment'));
+            //pomocu response vracam view             
             }
         }
 
