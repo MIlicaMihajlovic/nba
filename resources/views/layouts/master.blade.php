@@ -12,10 +12,15 @@
     <main role="main" class="container">
 
        @if($flash = session('message'))
-        <div class="alert alert-success">
-            {{ $flash }}
-        </div>
-     @endif
+            <div class="alert alert-success">
+                {{ $flash }}
+            </div>
+        @elseif($flash = session('warning'))
+            <div class="alert alert-danger">
+                {{ $flash }}
+            </div>
+
+        @endif
      
      @include('layouts.partials.header')
 

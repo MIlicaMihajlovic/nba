@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -19,15 +20,14 @@ class LoginController extends Controller
 
     public function login()
     {
-        //dd(request());
-        if(!auth()->attempt(request(['email', 'password']))) //ako nema unetih polja ili su pogresno upisana (email, password)
+     if(!auth()->attempt(request(['email', 'password']))) //ako nema unetih polja ili su pogresno upisana (email, password)
         {
-            session()->flash('message', 'Pogresio si sifru!');
+            session()->flash('warning', 'Pogresio si sifru!');
             return back(); //vrati ovu poruku
         }
+      
+        //dd(request());
         
-
-
         return redirect('/'); //u suprotnom uloguj usera i redirektuj na stranicu gde su svi timovi
     }
 

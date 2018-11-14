@@ -16,13 +16,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'];
+        'name', 'email', 'password', 'is_verified', 'verification_code'];
 
 
     const VALIDATION_RULES = [
         'name' => 'required', 
-        'email' => 'required | email', 
-        'password' => 'required | confirmed:password_confirmation | min:6'
+        'email' => 'required|email|unique:users', 
+        'password' => 'required|confirmed:password_confirmation| min:6',
+        
     ];    
 
     /**

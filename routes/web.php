@@ -17,7 +17,9 @@ Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
 
 Route::get('/login', 'LoginController@index')->name('login');
-Route::post('/login', 'LoginController@login' );
+Route::post('/login', 'LoginController@login' )->middleware('verification.email');
+
+Route::get('/verify/{verification_code}', 'RegisterController@verify');
 
 Route::get('/logout', 'LoginController@logout');
 
