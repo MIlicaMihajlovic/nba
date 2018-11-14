@@ -23,10 +23,10 @@ Route::get('/verify/{verification_code}', 'RegisterController@verify');
 
 Route::get('/logout', 'LoginController@logout');
 
-
+Route::get('/news', 'NewsController@index');
+Route::get('/news/{news_id}', 'NewsController@show');
 
 Route::get('/teams/{id}', 'TeamsController@show')->name('teams.show');
-
 Route::post('/teams/{team_id}/comments', 'CommentsController@store')->middleware('forbidden.words');
 
 
