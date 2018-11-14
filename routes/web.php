@@ -27,7 +27,9 @@ Route::get('/logout', 'LoginController@logout');
 
 Route::get('/teams/{id}', 'TeamsController@show')->name('teams.show');
 
-Route::post('/teams/{team_id}/comments', 'CommentsController@store');
+Route::post('/teams/{team_id}/comments', 'CommentsController@store')->middleware('forbidden.words');
+
+
 
 
 

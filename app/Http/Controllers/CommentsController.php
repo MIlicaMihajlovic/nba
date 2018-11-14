@@ -23,4 +23,6 @@ class CommentsController extends Controller
         return redirect("/teams/$team_id"); //kada stavis duple navodnike mozes da iskoristis varijablu
         //a kada pisemo {} onda tu cuvamo prostor za nesto sto cemo mu proslediti
     }
+
+    
 }
